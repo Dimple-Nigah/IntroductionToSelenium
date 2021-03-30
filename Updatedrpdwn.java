@@ -22,14 +22,29 @@ public class Updatedrpdwn {
 				dr.findElement(By.id("divpaxinfo")).click();
 				
 				//Creating a variable for webelement which we will be getting from Select Tag
-				WebElement staticdropdown = dr.findElement(By.id("ctl00_mainContent_ddl_Adult"));
+				WebElement staticdropdownAdult = dr.findElement(By.id("ctl00_mainContent_ddl_Adult"));
 				
 				//Creating a variable for select tag
-				Select dropdown = new Select(staticdropdown);
-				dropdown.selectByValue("3");
-				dr.findElement(By.id("divpaxinfo")).click();
-				System.out.println(dropdown.getFirstSelectedOption().getText());
+				Select dropdownAdult = new Select(staticdropdownAdult);
+				dropdownAdult.selectByValue("3");//Adding 3 adults
+				System.out.println(dropdownAdult.getFirstSelectedOption().getText());
 
+				//Add two childs in Passengers
+				WebElement staticdropdownChild = dr.findElement(By.id("ctl00_mainContent_ddl_Child"));
+				Select dropdownChild = new Select(staticdropdownChild);
+				dropdownChild.selectByValue("2");//Adding 3 adults
+				System.out.println(dropdownChild.getFirstSelectedOption().getText());
+				
+				
+				//Add two Infants in Passengers
+				WebElement staticdropdownInfants = dr.findElement(By.id("ctl00_mainContent_ddl_Infant"));
+				Select dropdownInfants = new Select(staticdropdownInfants);
+				dropdownInfants.selectByValue("1");//Adding 3 adults
+				System.out.println(dropdownInfants.getFirstSelectedOption().getText());
+				
+				
+				dr.findElement(By.id("divpaxinfo")).click();
+				
 				
 				
 	}
